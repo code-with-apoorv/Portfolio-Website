@@ -1,409 +1,495 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MeetPulse AI — Intelligent Meeting Summarizer</title>
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              50: '#eff6ff',
-              500: '#3b82f6',
-              600: '#2563eb',
-              700: '#1d4ed8',
-            }
-          }
-        }
-      }
-    }
-  </script>
-  <link rel="stylesheet" href="/static/css/styles.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎙️</text></svg>">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apoorv Kumar Singh — Cloud & Full-Stack Engineer | AI & Computer Vision</title>
+  <meta name="description" content="Portfolio of Apoorv Kumar Singh — Computer Science Undergraduate in Cloud Computing & Automation at VIT Bhopal. Full-stack development, Spring Boot, Angular, and Computer Vision." />
+  <meta property="og:title" content="Apoorv Kumar Singh — Cloud & Full-Stack Engineer" />
+  <meta property="og:description" content="Building scalable cloud-native architectures, enterprise backend systems, and AI computer vision pipelines." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="bg-[#0B0F17] text-slate-200 antialiased selection:bg-blue-600 selection:text-white">
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
+    <div class="navbar__inner">
+      <a href="#hero" class="navbar__logo">
+        <div class="navbar__logo-badge">A</div>
+        Apoorv<span>.</span>
+      </a>
+
+      <ul class="navbar__links" id="navbar-links">
+        <li><a href="#hero" class="navbar__link navbar__link--active">Home</a></li>
+        <li><a href="#about" class="navbar__link">About</a></li>
+        <li><a href="#skills" class="navbar__link">Skills</a></li>
+        <li><a href="#projects" class="navbar__link">Projects</a></li>
+        <li><a href="#experience" class="navbar__link">Experience</a></li>
+        <li><a href="#education" class="navbar__link">Education</a></li>
+        <li><a href="#gallery" class="navbar__link">Gallery</a></li>
+        <li><a href="#contact" class="navbar__link">Contact</a></li>
+      </ul>
+
+      <div class="navbar__actions" id="navbar-actions">
+        <!-- Live Palette Customizer -->
+        <div class="palette-picker" title="Switch Accent Color">
+          <button class="palette-btn palette-btn--cyan" data-accent="cyan" aria-label="Cyan Accent"></button>
+          <button class="palette-btn palette-btn--emerald" data-accent="emerald" aria-label="Emerald Accent"></button>
+          <button class="palette-btn palette-btn--violet" data-accent="violet" aria-label="Violet Accent"></button>
+          <button class="palette-btn palette-btn--amber" data-accent="amber" aria-label="Amber Accent"></button>
+        </div>
+
+        <a href="https://github.com/code-with-apoorv" target="_blank" rel="noopener" class="navbar__social-link" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+        </a>
+        <a href="https://linkedin.com/in/code-with-apoorv" target="_blank" rel="noopener" class="navbar__social-link" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        </a>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark theme" title="Toggle theme">
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+      </div>
+
+      <button class="navbar__hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="navbar__mobile" id="mobile-menu">
+    <a href="#hero" onclick="closeMobileMenu()">Home</a>
+    <a href="#about" onclick="closeMobileMenu()">About</a>
+    <a href="#skills" onclick="closeMobileMenu()">Skills</a>
+    <a href="#projects" onclick="closeMobileMenu()">Projects</a>
+    <a href="#experience" onclick="closeMobileMenu()">Experience</a>
+    <a href="#education" onclick="closeMobileMenu()">Education</a>
+    <a href="#gallery" onclick="closeMobileMenu()">Gallery</a>
+    <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero section" id="hero">
+    <div class="hero__bg">
+      <div class="hero__gradient-1"></div>
+      <div class="hero__gradient-2"></div>
+      <div class="hero__grid"></div>
+    </div>
+    <div class="container hero__content">
+      <div class="hero__text">
+        <div class="hero__eyebrow">
+          <span class="hero__eyebrow-dot"></span>
+          Cloud Computing &amp; Automation • VIT Bhopal
+        </div>
+        <h1 class="hero__title">
+          Engineering Scalable Cloud Systems &amp; <span>Intelligent AI.</span>
+        </h1>
+        <p class="hero__description">
+          I build high-throughput backend microservices with Spring Boot, dynamic client experiences in Angular, and real-time computer vision pipelines with PyTorch and YOLO.
+        </p>
+        <div class="hero__actions">
+          <a href="#projects" class="btn btn--primary">
+            Explore My Work
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <a href="Apoorv_Kumar_Singh_Resume.pdf" class="btn btn--secondary" download="Apoorv_Kumar_Singh_Resume.pdf">
+            Download Resume
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          </a>
+          <div class="hero__availability">
+            <span class="hero__availability-dot"></span>
+            Open to Opportunities
+          </div>
+        </div>
+
+        <!-- Quick Stats Banner -->
+        <div class="hero__stats" id="hero-stats"></div>
+      </div>
+
+      <!-- Interactive Apple-Style Terminal -->
+      <div class="hero__visual">
+        <div class="terminal" id="hero-terminal">
+          <div class="terminal__titlebar">
+            <div class="terminal__dots">
+              <span class="terminal__dot terminal__dot--red"></span>
+              <span class="terminal__dot terminal__dot--yellow"></span>
+              <span class="terminal__dot terminal__dot--green"></span>
+            </div>
+            <div class="terminal__title">apoorv@cloud-station:~</div>
+            <div class="terminal__dots" style="visibility:hidden">
+              <span class="terminal__dot"></span>
+            </div>
+          </div>
+          <div class="terminal__body">
+            <div class="terminal__line">
+              <span class="terminal__prompt">→</span>
+              <span class="terminal__path">~/apoorv</span>
+              <span class="terminal__cmd" id="terminal-cmd"></span><span class="terminal__cursor" id="terminal-cursor">_</span>
+            </div>
+            <div class="terminal__output" id="terminal-output"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT & JOURNEY ========== -->
+  <section class="section" id="about">
+    <div class="container reveal">
+      <div class="section-heading">
+        <div class="section-heading__label">About &amp; Background</div>
+        <h2 class="section-heading__title">Architecting with precision.<br />Engineering for scale.</h2>
+        <p class="section-heading__subtitle">
+          From microservices backends and container orchestration to deep learning video analytics.
+        </p>
+      </div>
+
+      <div class="about__grid">
+        <div class="about__text">
+          <p>
+            I am a Computer Science Undergraduate specializing in <strong>Cloud Computing &amp; Automation at VIT Bhopal</strong> with a strong academic foundation (<strong>CGPA: 8.34</strong>). My engineering mindset revolves around understanding the underlying mechanics of computing systems—from database transaction isolation and memory models to real-time object tracking algorithms.
+          </p>
+          <p>
+            In full-stack engineering, I specialize in building enterprise-grade applications using <strong>Java, Spring Boot 3, Spring Security with JWT</strong>, and <strong>Angular 17/19</strong>. In AI and Computer Vision, I build automated sports analytics and video processing engines using <strong>PyTorch, YOLOv8, and OpenCV</strong>.
+          </p>
+          <p>
+            Beyond technical development, I actively lead on-ground operations as the <strong>Co-Lead of Team Management for AdVITya’26 Sports Fest</strong> and contribute to the developer community, recognized as <strong>Best Maintainer at the AcWoc’25 Hackathon</strong>.
+          </p>
+        </div>
+
+        <div class="about__card">
+          <h3 class="about__card-title">Core Engineering Pillars</h3>
+          <ul class="about__highlights-list">
+            <li class="about__highlight-item">
+              <span class="about__highlight-icon">☁️</span>
+              <div>
+                <strong style="color:var(--text-primary)">Cloud-Native Architecture</strong>
+                <p>Designing stateless microservices, containerization with Docker, and CI/CD pipelines.</p>
+              </div>
+            </li>
+            <li class="about__highlight-item">
+              <span class="about__highlight-icon">☕</span>
+              <div>
+                <strong style="color:var(--text-primary)">Enterprise Java &amp; Spring Boot</strong>
+                <p>Developing secure REST APIs, role-based authentication, and JPA query optimization.</p>
+              </div>
+            </li>
+            <li class="about__highlight-item">
+              <span class="about__highlight-icon">🤖</span>
+              <div>
+                <strong style="color:var(--text-primary)">Computer Vision Analytics</strong>
+                <p>Real-time player tracking, trajectory prediction, and 2D court homography transformation.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Continuous Marquee: 12-Step Journey -->
+      <div class="about__journey-wrapper">
+        <div class="about__journey-header">
+          <div class="about__journey-title">Technical Journey &amp; Milestones</div>
+          <span style="font-family: var(--font-mono); font-size: 12px; color: var(--accent-primary);">Continuous Evolution →</span>
+        </div>
+        <div class="marquee" aria-hidden="true">
+          <div class="marquee__content" id="journey-track"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS MATRIX ========== -->
+  <section class="section" id="skills">
+    <div class="container reveal">
+      <div class="section-heading">
+        <div class="section-heading__label">Skills &amp; Toolbelt</div>
+        <h2 class="section-heading__title">Technologies &amp; Expertise</h2>
+        <p class="section-heading__subtitle">A comprehensive toolkit spanning cloud infrastructure, backend services, frontend frameworks, and deep learning.</p>
+      </div>
+
+      <div class="skills-grid" id="skills-container"></div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS SHOWCASE ========== -->
+  <section class="section" id="projects">
+    <div class="container reveal">
+      <div class="section-heading">
+        <div class="section-heading__label">Featured Work</div>
+        <h2 class="section-heading__title">Production &amp; Research Projects</h2>
+        <p class="section-heading__subtitle">Interactive view of enterprise full-stack systems, computer vision models, and web applications.</p>
+      </div>
+
+      <!-- Filter Controls -->
+      <div class="projects__filters">
+        <button class="filter-btn filter-btn--active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="fullstack">Cloud &amp; Full-Stack</button>
+        <button class="filter-btn" data-filter="ai">AI &amp; Computer Vision</button>
+        <button class="filter-btn" data-filter="frontend">Frontend &amp; Portals</button>
+      </div>
+
+      <div class="projects-grid" id="projects-container"></div>
+    </div>
+  </section>
+
+  <!-- ========== EXPERIENCE & LEADERSHIP ========== -->
+  <section class="section" id="experience">
+    <div class="container reveal">
+      <div class="section-heading">
+        <div class="section-heading__label">Experience &amp; Leadership</div>
+        <h2 class="section-heading__title">Campus Leadership &amp; Open Source</h2>
+        <p class="section-heading__subtitle">Managing large-scale collegiate sports events and leading open-source maintenance.</p>
+      </div>
+
+      <div class="hscroller">
+        <div class="hscroller__track" id="experience-track" role="region" aria-label="Experience carousel"></div>
+        <div class="hscroller__controls">
+          <button class="hscroller__btn" id="exp-prev" aria-label="Previous experience">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          <button class="hscroller__btn" id="exp-next" aria-label="Next experience">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EDUCATION & CERTIFICATIONS ========== -->
+  <section class="section" id="education">
+    <div class="container reveal">
+      <div class="section-heading">
+        <div class="section-heading__label">Education &amp; Credentials</div>
+        <h2 class="section-heading__title">Academic Journey &amp; Accolades</h2>
+      </div>
+
+      <!-- Education Scroller -->
+      <div style="margin-bottom: 50px;">
+        <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; margin-bottom: 20px; color: var(--text-primary); display: flex; align-items: center; gap: 8px;">
+          <span>🎓</span> Formal Degree
+        </h3>
+        <div class="hscroller">
+          <div class="hscroller__track" id="education-track" role="region" aria-label="Education carousel"></div>
+        </div>
+      </div>
+
+      <!-- Certifications Scroller -->
+      <div>
+        <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; margin-bottom: 20px; color: var(--text-primary); display: flex; align-items: center; gap: 8px;">
+          <span>📜</span> Certifications &amp; Hackathon Badges
+        </h3>
+        <div class="hscroller">
+          <div class="hscroller__track" id="certifications-track" role="region" aria-label="Certifications carousel"></div>
+          <div class="hscroller__controls">
+            <button class="hscroller__btn" id="cert-prev" aria-label="Previous certification">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button class="hscroller__btn" id="cert-next" aria-label="Next certification">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CAMPUS & EVENT GALLERY ========== -->
+  <section class="section" id="gallery">
+    <div class="container reveal">
+      <div class="section-heading">
+        <div class="section-heading__label">Moments &amp; Campus Life</div>
+        <h2 class="section-heading__title">Event Operations &amp; Campus Highlights</h2>
+        <p class="section-heading__subtitle">Glimpses of fest coordination, university fests, cultural celebrations, and tech community life.</p>
+      </div>
+
+      <div class="gallery-grid" id="gallery-container"></div>
+    </div>
+  </section>
+
+  <!-- ========== ENGINEERING PHILOSOPHY ========== -->
+  <section class="section" id="philosophy">
+    <div class="container reveal">
+      <div class="section-heading">
+        <div class="section-heading__label">Engineering Mindset</div>
+        <h2 class="section-heading__title">How I Build &amp; Solve Problems</h2>
+      </div>
+
+      <div class="philosophy__grid" id="philosophy-container"></div>
+    </div>
+  </section>
+
+  <!-- ========== RESUME CTA ========== -->
+  <section class="section" id="resume">
+    <div class="container reveal">
+      <div class="resume-cta">
+        <h2 class="resume-cta__title">Looking for the Complete Resume?</h2>
+        <p class="resume-cta__desc">
+          Download my comprehensive resume PDF or review my GitHub codebases and enterprise credentials.
+        </p>
+        <div class="resume-cta__actions">
+          <a href="Apoorv_Kumar_Singh_Resume.pdf" class="btn btn--primary" target="_blank">
+            View Resume PDF
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+          <a href="Apoorv_Kumar_Singh_Resume.pdf" class="btn btn--secondary" download="Apoorv_Kumar_Singh_Resume.pdf">
+            Download PDF
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          </a>
+          <a href="https://github.com/code-with-apoorv" target="_blank" rel="noopener" class="btn btn--secondary">
+            GitHub Profile
+          </a>
+          <a href="https://linkedin.com/in/code-with-apoorv" target="_blank" rel="noopener" class="btn btn--secondary">
+            LinkedIn Profile
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section class="section" id="contact">
+    <div class="container reveal">
+      <div class="section-heading">
+        <div class="section-heading__label">Get In Touch</div>
+        <h2 class="section-heading__title">Let's Build Something Exceptional.</h2>
+        <p class="section-heading__subtitle">Have a project in mind, an engineering opportunity, or wish to collaborate? Reach out below!</p>
+      </div>
+
+      <div class="contact__grid">
+        <div class="contact__info">
+          <!-- Email Card -->
+          <div class="contact__info-card">
+            <div class="contact__info-left">
+              <div class="contact__info-icon">✉️</div>
+              <div>
+                <div class="contact__info-label">Direct Email</div>
+                <div class="contact__info-value">apoorv.singh2421@gmail.com</div>
+              </div>
+            </div>
+            <button class="contact__copy-btn" id="btn-copy-email">Copy</button>
+          </div>
+
+          <!-- Phone Card -->
+          <div class="contact__info-card">
+            <div class="contact__info-left">
+              <div class="contact__info-icon">📱</div>
+              <div>
+                <div class="contact__info-label">Phone</div>
+                <div class="contact__info-value">+91-7805861085</div>
+              </div>
+            </div>
+            <button class="contact__copy-btn" id="btn-copy-phone">Copy</button>
+          </div>
+
+          <!-- Location Card -->
+          <div class="contact__info-card">
+            <div class="contact__info-left">
+              <div class="contact__info-icon">📍</div>
+              <div>
+                <div class="contact__info-label">Location</div>
+                <div class="contact__info-value">Varanasi, UP &bull; Bhopal, MP</div>
+              </div>
+            </div>
+            <span style="font-size: 13px; color: var(--accent-primary); font-weight: 600;">India 🇮🇳</span>
+          </div>
+
+          <!-- Social Quick Links -->
+          <div style="display: flex; gap: 12px; margin-top: 6px;">
+            <a href="https://github.com/code-with-apoorv" target="_blank" rel="noopener" class="btn btn--secondary" style="flex: 1; justify-content: center;">
+              GitHub
+            </a>
+            <a href="https://linkedin.com/in/code-with-apoorv" target="_blank" rel="noopener" class="btn btn--secondary" style="flex: 1; justify-content: center;">
+              LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <form class="contact__form" id="contact-form" action="https://formsubmit.co/apoorv.singh2421@gmail.com" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="New message from Apoorv's Portfolio!" />
+          <input type="hidden" name="_captcha" value="false" />
+          
+          <div class="form-group">
+            <label for="contact-name">Your Name</label>
+            <input type="text" id="contact-name" name="name" placeholder="John Doe" required />
+            <span class="form-error" id="error-name">Please enter your name.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-email">Email Address</label>
+            <input type="email" id="contact-email" name="email" placeholder="john@example.com" required />
+            <span class="form-error" id="error-email">Please enter a valid email address.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" placeholder="Hi Apoorv, I'd like to discuss a project or role..." required></textarea>
+            <span class="form-error" id="error-message">Please enter your message.</span>
+          </div>
+
+          <div id="form-status" class="form-status"></div>
+
+          <button type="submit" class="btn btn--primary" id="contact-submit" style="width: 100%; justify-content: center; padding: 14px;">
+            Send Message
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__title">Apoorv Kumar Singh &bull; Cloud &amp; Full-Stack Engineer</div>
+      <ul class="footer__links">
+        <li><a href="#hero" class="footer__link">Home</a></li>
+        <li><a href="#about" class="footer__link">About</a></li>
+        <li><a href="#skills" class="footer__link">Skills</a></li>
+        <li><a href="#projects" class="footer__link">Projects</a></li>
+        <li><a href="#experience" class="footer__link">Experience</a></li>
+        <li><a href="#education" class="footer__link">Education</a></li>
+        <li><a href="#gallery" class="footer__link">Gallery</a></li>
+        <li><a href="#contact" class="footer__link">Contact</a></li>
+      </ul>
+      <div class="footer__socials">
+        <a href="https://github.com/code-with-apoorv" target="_blank" rel="noopener" class="footer__social" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+        </a>
+        <a href="https://linkedin.com/in/code-with-apoorv" target="_blank" rel="noopener" class="footer__social" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        </a>
+        <a href="mailto:apoorv.singh2421@gmail.com" class="footer__social" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        </a>
+      </div>
+      <p class="footer__copyright">&copy; <span id="year"></span> Apoorv Kumar Singh. All rights reserved.</p>
+      <p class="footer__tagline">Architected with precision &bull; Built with modern web standards.</p>
+    </div>
+  </footer>
+
+  <!-- ========== PROJECT DETAIL MODAL ========== -->
+  <div class="modal-overlay" id="project-modal-overlay" role="dialog" aria-modal="true" aria-label="Project details">
+    <div class="modal" id="project-modal">
+      <button class="modal__close" id="modal-close" aria-label="Close modal">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="modal__content" id="modal-content"></div>
+    </div>
+  </div>
 
   <!-- Toast Notification Container -->
-  <div id="toast-container" class="fixed top-5 right-5 z-50 flex flex-col space-y-2 max-w-sm"></div>
+  <div id="toast-container" class="toast-container"></div>
 
-  <!-- Main Navigation Header -->
-  <header class="border-b border-gray-800/80 bg-gray-950/70 backdrop-blur-md sticky top-0 z-40">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      
-      <!-- Brand Logo -->
-      <div class="flex items-center space-x-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center shadow-lg shadow-blue-500/20 text-white font-bold text-lg">
-          🎙️
-        </div>
-        <div>
-          <h1 class="text-lg font-bold tracking-tight text-white flex items-center gap-2">
-            MeetPulse <span class="text-xs px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-400 font-semibold border border-blue-500/30">AI Summarizer</span>
-          </h1>
-          <p class="text-xs text-gray-400">Speech-to-Text & Action-Oriented Intelligence</p>
-        </div>
-      </div>
-
-      <!-- Navigation Tabs -->
-      <nav class="flex space-x-1 border border-gray-800 bg-gray-900/60 p-1 rounded-xl">
-        <button data-tab="upload" class="nav-tab px-4 py-1.5 text-xs font-semibold rounded-lg transition-all border border-blue-500 text-blue-400 bg-blue-950/30">
-          🎙️ Upload & Record
-        </button>
-        <button data-tab="direct-text" class="nav-tab px-4 py-1.5 text-xs font-semibold rounded-lg transition-all border border-transparent text-gray-400 hover:text-gray-200">
-          📝 Direct Text
-        </button>
-        <button data-tab="history" class="nav-tab px-4 py-1.5 text-xs font-semibold rounded-lg transition-all border border-transparent text-gray-400 hover:text-gray-200">
-          📁 Meeting History
-        </button>
-      </nav>
-
-      <!-- System Status Indicator -->
-      <div class="hidden sm:flex items-center space-x-3">
-        <span id="backend-status-badge" class="text-xs px-2.5 py-1 rounded-full font-medium bg-emerald-950 text-emerald-400 border border-emerald-800/40">
-          ● System Online
-        </span>
-      </div>
-
-    </div>
-  </header>
-
-  <!-- Main Container -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-
-    <!-- ======================================================== -->
-    <!-- TAB 1: UPLOAD & LIVE RECORD PANEL                        -->
-    <!-- ======================================================== -->
-    <div id="panel-upload" class="tab-panel space-y-8">
-      
-      <!-- Input Controls Section (Upload + Mic Recording) -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        
-        <!-- Left: File Dropzone (7 Cols) -->
-        <div class="lg:col-span-7 glass-card rounded-2xl p-6 border border-gray-800">
-          <div class="flex items-center justify-between mb-4">
-            <h2 class="text-base font-bold text-gray-100 flex items-center gap-2">
-              <span>📁</span> Upload Meeting Audio
-            </h2>
-            <span class="text-xs text-gray-400">MP3, WAV, M4A, OGG, WEBM, MP4 (Max 50MB)</span>
-          </div>
-
-          <!-- Dropzone Box -->
-          <div id="dropzone" class="border-2 border-dashed border-gray-700 hover:border-blue-500 rounded-xl p-8 text-center cursor-pointer transition-all bg-gray-900/40 hover:bg-blue-950/10 flex flex-col items-center justify-center group">
-            <input type="file" id="audio-file-input" class="hidden" accept=".mp3,.wav,.m4a,.ogg,.webm,.mp4,.flac">
-            <div class="w-14 h-14 rounded-2xl bg-gray-800/80 group-hover:bg-blue-600/20 text-gray-400 group-hover:text-blue-400 flex items-center justify-center text-2xl transition-all mb-3">
-              📤
-            </div>
-            <p class="text-sm font-semibold text-gray-200">Drag & drop your meeting recording here</p>
-            <p class="text-xs text-gray-400 mt-1">or <span class="text-blue-400 underline font-medium">browse local files</span></p>
-          </div>
-
-          <!-- Selected File Preview Card (Hidden initially) -->
-          <div id="file-preview" class="hidden bg-gray-900/90 border border-blue-500/30 rounded-xl p-4 space-y-3">
-            <div class="flex items-center justify-between">
-              <div class="flex items-center space-x-3 min-w-0">
-                <span class="text-2xl">🎵</span>
-                <div class="truncate">
-                  <p id="file-name" class="text-sm font-semibold text-gray-100 truncate">meeting_recording.wav</p>
-                  <p id="file-size" class="text-xs text-gray-400">3.4 MB</p>
-                </div>
-              </div>
-              <button id="btn-remove-file" class="text-xs text-rose-400 hover:text-rose-300 font-medium px-2 py-1 bg-rose-950/30 rounded border border-rose-900/40">
-                Remove
-              </button>
-            </div>
-            <audio id="audio-preview-player" controls class="w-full h-9 rounded-lg bg-gray-800 hidden"></audio>
-          </div>
-        </div>
-
-        <!-- Right: Live Mic Recorder & Options (5 Cols) -->
-        <div class="lg:col-span-5 flex flex-col space-y-6">
-          
-          <!-- Live Mic Recorder Card -->
-          <div class="glass-card rounded-2xl p-6 border border-gray-800 flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <h2 class="text-base font-bold text-gray-100 flex items-center gap-2">
-                  <span>🎙️</span> Record Live Meeting
-                </h2>
-                <span id="record-indicator" class="hidden text-xs font-semibold px-2 py-0.5 rounded-full bg-rose-500/20 text-rose-400 border border-rose-500/40">
-                  ● LIVE
-                </span>
-              </div>
-              <p id="record-status" class="text-xs text-gray-400 mb-4">Click below to capture meeting audio directly from your microphone.</p>
-              
-              <!-- Waveform Canvas -->
-              <canvas id="waveform-canvas" class="w-full h-16 rounded-lg bg-gray-900 border border-gray-800"></canvas>
-            </div>
-
-            <div class="mt-4 flex items-center justify-between pt-2">
-              <span id="record-timer" class="font-mono text-lg font-bold text-blue-400 tracking-wider">00:00</span>
-              <div class="flex space-x-2">
-                <button id="btn-start-record" class="px-4 py-2 rounded-xl text-xs font-bold bg-rose-600 hover:bg-rose-500 text-white transition-all shadow-lg shadow-rose-600/30 flex items-center gap-2">
-                  <span>●</span> Start Recording
-                </button>
-                <button id="btn-stop-record" class="hidden px-4 py-2 rounded-xl text-xs font-bold bg-gray-700 hover:bg-gray-600 text-white transition-all flex items-center gap-2">
-                  <span>⏹</span> Stop & Attach
-                </button>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- Advanced Engine Settings & Action Button -->
-      <div class="glass-card rounded-2xl p-5 border border-gray-800 flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 flex-1">
-          <!-- ASR Provider -->
-          <div>
-            <label class="block text-xs font-medium text-gray-400 mb-1">ASR Speech Engine</label>
-            <select id="asr-provider-select" class="w-full text-xs rounded-lg bg-gray-900 border border-gray-700 text-gray-200 px-3 py-2 focus:ring-1 focus:ring-blue-500 outline-none">
-              <option value="auto">Auto Detect (Recommended)</option>
-              <option value="groq">Groq Whisper (Ultra-Fast)</option>
-              <option value="openai">OpenAI Whisper API</option>
-              <option value="gemini">Google Gemini Audio</option>
-              <option value="mock">Offline Fallback / Demo</option>
-            </select>
-          </div>
-
-          <!-- LLM Provider -->
-          <div>
-            <label class="block text-xs font-medium text-gray-400 mb-1">LLM Summarizer</label>
-            <select id="llm-provider-select" class="w-full text-xs rounded-lg bg-gray-900 border border-gray-700 text-gray-200 px-3 py-2 focus:ring-1 focus:ring-blue-500 outline-none">
-              <option value="auto">Auto Detect (Gemini / Groq / OpenAI)</option>
-              <option value="gemini">Google Gemini 1.5 Flash</option>
-              <option value="groq">Groq Llama-3.3 70B</option>
-              <option value="openai">OpenAI GPT-4o-mini</option>
-              <option value="fallback">Built-in Extractor</option>
-            </select>
-          </div>
-
-          <!-- Custom Instructions -->
-          <div>
-            <label class="block text-xs font-medium text-gray-400 mb-1">Custom Prompt Guidance</label>
-            <input type="text" id="custom-prompt" placeholder="e.g. Focus on engineering blockers..." class="w-full text-xs rounded-lg bg-gray-900 border border-gray-700 text-gray-200 px-3 py-2 focus:ring-1 focus:ring-blue-500 outline-none placeholder-gray-600">
-          </div>
-        </div>
-
-        <!-- Submit Button -->
-        <div class="flex items-end">
-          <button id="btn-process-audio" disabled class="w-full md:w-auto px-8 py-3.5 rounded-xl font-bold text-sm bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white shadow-xl shadow-blue-500/25 transition-all opacity-50 cursor-not-allowed flex items-center justify-center gap-2">
-            <span>⚡ Transcribe & Summarize</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Processing Progress Tracker (Hidden by default) -->
-      <div id="processing-status" class="hidden glass-card rounded-2xl p-6 border border-blue-500/40 bg-blue-950/10 space-y-4 animate-fade-in">
-        <div class="flex items-center justify-between">
-          <div class="flex items-center space-x-3">
-            <div class="w-5 h-5 border-2 border-blue-400 border-t-transparent rounded-full animate-spin"></div>
-            <p id="progress-step-text" class="text-sm font-semibold text-blue-200">Processing meeting audio...</p>
-          </div>
-          <span class="text-xs text-blue-400 font-mono">In Progress</span>
-        </div>
-
-        <!-- 3-Step Indicators -->
-        <div class="grid grid-cols-3 gap-2 pt-2">
-          <div class="flex items-center space-x-2">
-            <div id="step-indicator-1" class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs ring-4 ring-blue-900">1</div>
-            <span class="text-xs text-gray-300 font-medium hidden sm:inline">1. Uploading Audio</span>
-          </div>
-          <div class="flex items-center space-x-2">
-            <div id="step-indicator-2" class="w-8 h-8 rounded-full bg-gray-700 text-gray-400 flex items-center justify-center font-bold text-xs">2</div>
-            <span class="text-xs text-gray-300 font-medium hidden sm:inline">2. Speech ASR</span>
-          </div>
-          <div class="flex items-center space-x-2">
-            <div id="step-indicator-3" class="w-8 h-8 rounded-full bg-gray-700 text-gray-400 flex items-center justify-center font-bold text-xs">3</div>
-            <span class="text-xs text-gray-300 font-medium hidden sm:inline">3. LLM Action Items</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- ======================================================== -->
-      <!-- RESULTS SECTION (Transcripts + Summaries + Action Items)  -->
-      <!-- ======================================================== -->
-      <div id="results-section" class="hidden space-y-6">
-        
-        <!-- Meeting Header Card -->
-        <div class="glass-card rounded-2xl p-6 border border-gray-800 space-y-4">
-          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div>
-              <div class="flex flex-wrap items-center gap-2 mb-2">
-                <span id="meeting-sentiment-badge" class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-950 text-emerald-400 border border-emerald-800/40">
-                  Constructive & Goal-Oriented
-                </span>
-                <span id="meeting-asr-badge" class="text-xs font-mono px-2.5 py-0.5 rounded-full bg-gray-800 text-gray-300 border border-gray-700">
-                  ASR: Whisper
-                </span>
-                <span id="meeting-llm-badge" class="text-xs font-mono px-2.5 py-0.5 rounded-full bg-gray-800 text-gray-300 border border-gray-700">
-                  LLM: Gemini
-                </span>
-                <span id="meeting-date" class="text-xs text-gray-400">
-                  2026-08-23 16:30
-                </span>
-              </div>
-              <h2 id="meeting-title" class="text-2xl font-black text-white tracking-tight">Strategic Product & Team Alignment Meeting</h2>
-              <div id="meeting-tags" class="flex flex-wrap gap-1.5 mt-2"></div>
-            </div>
-
-            <!-- Export Buttons Dropdown / Action Bar -->
-            <div class="flex flex-wrap items-center gap-2">
-              <button id="btn-copy-summary" class="px-3.5 py-2 text-xs font-semibold rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 transition-all flex items-center gap-1.5">
-                📋 Copy Text
-              </button>
-              <button id="btn-export-md" class="px-3.5 py-2 text-xs font-semibold rounded-xl bg-blue-950/60 hover:bg-blue-900/80 text-blue-300 border border-blue-800/60 transition-all flex items-center gap-1.5">
-                ⬇️ Markdown (.md)
-              </button>
-              <button id="btn-export-pdf" class="px-3.5 py-2 text-xs font-semibold rounded-xl bg-indigo-950/60 hover:bg-indigo-900/80 text-indigo-300 border border-indigo-800/60 transition-all flex items-center gap-1.5">
-                📑 PDF Report
-              </button>
-              <button id="btn-export-json" class="px-3 py-2 text-xs font-semibold rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-300 border border-gray-700 transition-all">
-                JSON
-              </button>
-              <button id="btn-export-txt" class="px-3 py-2 text-xs font-semibold rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-300 border border-gray-700 transition-all">
-                TXT
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2-Column Main Workspace -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          
-          <!-- LEFT COLUMN: Verbatim Transcript (5 Cols) -->
-          <div class="lg:col-span-5 glass-card rounded-2xl p-6 border border-gray-800 space-y-4 flex flex-col h-[650px]">
-            <div class="flex items-center justify-between pb-3 border-b border-gray-800">
-              <h3 class="text-sm font-bold text-gray-200 flex items-center gap-2">
-                <span>🎙️</span> Verbatim Transcript
-              </h3>
-              <button id="btn-copy-transcript" class="text-xs text-gray-400 hover:text-blue-400 font-medium">
-                Copy
-              </button>
-            </div>
-
-            <!-- In-transcript Search Input -->
-            <div class="relative">
-              <input type="text" id="transcript-search" placeholder="Search transcript..." class="w-full text-xs rounded-lg bg-gray-900 border border-gray-700 text-gray-200 pl-8 pr-3 py-2 focus:ring-1 focus:ring-blue-500 outline-none placeholder-gray-600">
-              <span class="absolute left-2.5 top-2.5 text-xs text-gray-500">🔍</span>
-            </div>
-
-            <!-- Scrollable Transcript Text Container -->
-            <div class="flex-1 overflow-y-auto pr-2">
-              <pre id="meeting-transcript-text" class="text-xs font-mono text-gray-300 leading-relaxed whitespace-pre-wrap select-text"></pre>
-            </div>
-          </div>
-
-          <!-- RIGHT COLUMN: AI Intelligence Cards (7 Cols) -->
-          <div class="lg:col-span-7 space-y-6">
-            
-            <!-- 1. Executive Summary Card -->
-            <div class="glass-card rounded-2xl p-6 border border-gray-800 space-y-3">
-              <h3 class="text-sm font-bold text-blue-400 flex items-center gap-2 uppercase tracking-wider">
-                <span>⚡</span> Executive Summary
-              </h3>
-              <p id="meeting-exec-summary" class="text-sm text-gray-300 leading-relaxed"></p>
-            </div>
-
-            <!-- 2. Key Decisions Card -->
-            <div class="glass-card rounded-2xl p-6 border border-gray-800 space-y-3">
-              <h3 class="text-sm font-bold text-emerald-400 flex items-center gap-2 uppercase tracking-wider">
-                <span>🎯</span> Key Decisions Made
-              </h3>
-              <ul id="meeting-decisions-list" class="space-y-2"></ul>
-            </div>
-
-            <!-- 3. Discussion Points -->
-            <div class="glass-card rounded-2xl p-6 border border-gray-800 space-y-3">
-              <h3 class="text-sm font-bold text-purple-400 flex items-center gap-2 uppercase tracking-wider">
-                <span>💡</span> Key Discussion Points
-              </h3>
-              <ul id="meeting-points-list" class="space-y-2"></ul>
-            </div>
-
-            <!-- 4. Action Items & Next Steps (Interactive Checklist) -->
-            <div class="glass-card rounded-2xl p-6 border border-gray-800 space-y-4">
-              <div class="flex items-center justify-between">
-                <h3 class="text-sm font-bold text-amber-400 flex items-center gap-2 uppercase tracking-wider">
-                  <span>✅</span> Action Items & Next Steps
-                </h3>
-                <span id="action-items-count" class="text-xs font-bold px-2 py-0.5 rounded-full bg-amber-950 text-amber-300 border border-amber-800/40">
-                  0 Tasks
-                </span>
-              </div>
-              
-              <!-- Checklist List -->
-              <div id="action-items-container" class="space-y-2"></div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- ======================================================== -->
-    <!-- TAB 2: DIRECT TEXT SUMMARIZER PANEL                      -->
-    <!-- ======================================================== -->
-    <div id="panel-direct-text" class="tab-panel hidden space-y-6">
-      <div class="glass-card rounded-2xl p-6 border border-gray-800 space-y-4">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-          <div>
-            <h2 class="text-base font-bold text-white">Direct Transcript Summarizer</h2>
-            <p class="text-xs text-gray-400">Paste your meeting notes or raw transcripts to generate structured summaries and action items.</p>
-          </div>
-          <button id="btn-load-sample-transcript" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-blue-950 text-blue-300 border border-blue-800 hover:bg-blue-900 transition-all flex items-center gap-1.5">
-            <span>✨</span> Load Sample Meeting
-          </button>
-        </div>
-
-        <textarea id="direct-transcript-text" rows="12" placeholder="Paste meeting transcript or notes here..." class="w-full text-xs font-mono rounded-xl bg-gray-900 border border-gray-700 text-gray-200 p-4 focus:ring-1 focus:ring-blue-500 outline-none leading-relaxed placeholder-gray-600"></textarea>
-
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
-          <input type="text" id="direct-custom-prompt" placeholder="Optional custom focus (e.g., 'Highlight budget decisions')..." class="w-full sm:w-96 text-xs rounded-lg bg-gray-900 border border-gray-700 text-gray-200 px-3 py-2.5 focus:ring-1 focus:ring-blue-500 outline-none">
-          <button id="btn-summarize-direct" class="w-full sm:w-auto px-6 py-2.5 rounded-xl font-bold text-xs bg-blue-600 hover:bg-blue-500 text-white transition-all shadow-lg shadow-blue-600/20">
-            Generate Summary
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- ======================================================== -->
-    <!-- TAB 3: MEETING HISTORY & ARCHIVE PANEL                   -->
-    <!-- ======================================================== -->
-    <div id="panel-history" class="tab-panel hidden space-y-6">
-      
-      <!-- History Search Bar -->
-      <div class="glass-card rounded-2xl p-4 border border-gray-800 flex items-center justify-between">
-        <div class="relative flex-1 max-w-md">
-          <input type="text" id="history-search" placeholder="Search past meetings by title, topic, or keyword..." class="w-full text-xs rounded-xl bg-gray-900 border border-gray-700 text-gray-200 pl-9 pr-4 py-2.5 focus:ring-1 focus:ring-blue-500 outline-none placeholder-gray-600">
-          <span class="absolute left-3 top-3 text-xs text-gray-500">🔍</span>
-        </div>
-      </div>
-
-      <!-- History Grid -->
-      <div id="history-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
-
-      <!-- Empty State -->
-      <div id="history-empty" class="hidden glass-card rounded-2xl p-12 text-center border border-gray-800 space-y-3">
-        <div class="text-4xl">📂</div>
-        <h3 class="text-base font-bold text-gray-200">No Past Meetings Found</h3>
-        <p class="text-xs text-gray-400">Upload or record a meeting to start building your archive.</p>
-      </div>
-
-    </div>
-
-  </main>
-
-  <!-- Scripts -->
-  <script src="/static/js/recorder.js"></script>
-  <script src="/static/js/app.js"></script>
+  <!-- Module Entry Script -->
+  <script type="module" src="app.js"></script>
 </body>
 </html>

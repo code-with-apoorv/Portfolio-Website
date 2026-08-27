@@ -1,47 +1,25 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-env/
-venv/
-.venv/
-ENV/
-
-# FastAPI / SQLite Storage
-*.db
-*.sqlite3
-backend/meetings.db
-backend/uploads/*
-!backend/uploads/.gitkeep
-backend/tests/test_meetings.db
-
-# Environment variables
-.env
-.env.local
-
-# IDE & OS
-.vscode/
-.idea/
-*.swp
-*.swo
+# OS & Editors
 .DS_Store
 Thumbs.db
+.vscode/
+.idea/
 
-# Testing & Coverage
-.pytest_cache/
-.coverage
-htmlcov/
+# Node / Vercel
+node_modules/
+.vercel/
 
-# Logs
-*.log
+# Heavy video files
+*.mp4
 
-# Workspace loose old media files
-/*.mp4
-/*.jpg
-/*.png
-/first.html
-/script.js
-/style.css
-/styles.css
+# Legacy test files
+first.html
+script.js
+style.css
+
+# Legacy sub-repos
+cloud_ecommerce_repo/
+github_profile_repo/
+newsvita_repo/
+vplay_repo/
+backend/
+frontend/
