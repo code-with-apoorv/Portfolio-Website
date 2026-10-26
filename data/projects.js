@@ -91,39 +91,43 @@ export const projects = [
     id: 3,
     number: "03",
     featured: true,
-    title: "NewsVITa — Centralized College News & Events Portal",
-    category: "frontend",
-    subtitle: "University-wide media, departmental announcements & campus event hub",
-    description: "A centralized campus news and event discovery portal streamlining university announcements, departmental notices, and annual fest participation. Features dynamic category filtering, fast search indexing, accessible layouts, and video media reels.",
+    title: "NewsVita — Campus Media & Event Intelligence Platform",
+    category: "fullstack",
+    subtitle: "Full-stack university event registration, RSVP engine & multimedia portal",
+    description: "A full-stack campus event and announcement intelligence portal. Replaces fragmented social media notices with a centralized platform featuring Role-Based Access Control (RBAC), atomic seat capacity tracking, live RSVP registration, automated digital QR admit passes, and high-definition event media archives.",
     technologies: [
-      "HTML5",
-      "CSS3",
+      "Node.js",
+      "Express.js",
+      "SQLite",
+      "JWT Auth",
+      "Bcrypt",
+      "REST APIs",
       "JavaScript ES6+",
       "Tailwind CSS",
-      "Lucide Icons",
-      "Git",
-      "Vercel"
+      "HTML5"
     ],
     image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop",
     github: "https://github.com/code-with-apoorv/Newsvita",
     demo: "https://newsvita.vercel.app",
-    overview: "NewsVITa provides a centralized digital focal point for thousands of university students and faculty members to stay informed about hackathons, cultural festivals, sports tournaments, and official departmental circulars.",
-    problem: "Campus information was previously scattered across disparate WhatsApp groups, email threads, and physical bulletin boards, leading to missed registration deadlines and poor student event turnout.",
-    solution: "Engineered an intuitive, responsive web application featuring live categorized news feeds, dynamic search filters, interactive event registration forms, and video reel playback for past campus highlights.",
-    architecture: "Client-Side Rendering (Vanilla ES6+ Modules with event-driven state) ↔ Responsive UI Layer (Tailwind CSS utility-first layout with fluid breakpoints) ↔ Dynamic Content Filtering & Media Assets Delivery.",
+    overview: "NewsVita provides a centralized digital focal point for university students and club organizers to discover campus hackathons, fests, and workshops, reserve tickets with instant seat verification, and download official entry admit passes.",
+    problem: "Campus event notices were previously scattered across ephemeral WhatsApp groups, while student registrations relied on disorganized manual forms prone to overbooking and lacking entry verification.",
+    solution: "Engineered a production-ready full-stack application: Express.js REST API handling JWT authentication and atomic seat reservations; connected to an ACID-compliant relational SQL schema; paired with a responsive Tailwind CSS client delivering live seat counters and digital QR passes.",
+    architecture: "Client Layer (Responsive HTML5/Tailwind SPA with async fetch & JWT session storage) ↔ RESTful API Layer (Express.js router + JWT auth middleware + atomic reservation engine) ↔ Persistence Layer (Relational SQLite schema with transaction integrity).",
     highlights: [
-      "Interactive event directory with instant real-time keyword search and category filtering tags.",
-      "Integrated responsive video reel components showcasing fest recaps and cultural performances.",
-      "Optimized client-side rendering achieving a 98+ Google Lighthouse performance score.",
-      "Mobile-first responsive interface tested across diverse viewport sizes and devices."
+      "Role-Based Access Control (RBAC) with secure Bcrypt password hashing and stateless JWT authentication.",
+      "Atomic seat reservation logic preventing concurrency race conditions and overbooking during high-traffic bursts.",
+      "Automated digital admit pass generation with unique reference tokens and printable SVG QR verification codes.",
+      "Full CRUD REST API endpoints for event scheduling, student registration, and RSVP cancellations.",
+      "Categorized campus media archive with responsive video reel player and keyboard-accessible lightbox."
     ],
     challenges: [
-      "Optimizing heavy multimedia assets (high-definition event videos and photography) for instant loading on mobile networks.",
-      "Building seamless client-side search filtering without external dependencies."
+      "Preventing race conditions when multiple concurrent students attempt to reserve the final remaining seat for a popular event.",
+      "Designing a clean, lightweight relational schema with foreign key integrity without heavy external database daemons."
     ],
     learned: [
-      "Mastery of modern CSS Grid/Flexbox layouts, fluid typography, and accessibility best practices (WCAG 2.1).",
-      "DOM lifecycle optimization, event delegation, and modular JavaScript architecture."
+      "RESTful API design best practices, HTTP status semantics, and secure token lifecycle management.",
+      "ACID relational transaction handling, atomic SQL updates, and data consistency.",
+      "Connecting vanilla JavaScript client applications to backend REST services using the Fetch API."
     ]
   }
 ];
